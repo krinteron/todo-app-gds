@@ -1,10 +1,27 @@
 <template>
+  <input-component />
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Все</router-link> |
+    <router-link to="/done">Выполненные</router-link> |
+    <router-link to="/active">Активные</router-link>
   </nav>
   <router-view />
+  <counter-todos />
 </template>
+
+<script>
+import InputComponent from '@/components/InputComponent.vue';
+import CounterTodos from '@/components/CounterTodos.vue';
+export default {
+  created() {
+    this.$store.dispatch('importTodos');
+  },
+  components: {
+    InputComponent,
+    CounterTodos,
+  },
+};
+</script>
 
 <style>
 #app {

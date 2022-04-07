@@ -5,10 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint:js": "npx eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "prettier": "prettier --write .",
+    "lint": "npm run prettier && npm run lint:js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "uuid": "^8.3.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -25,6 +28,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0"
   }
 }
